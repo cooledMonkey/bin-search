@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchBinFragment">
+
+
+    <fragment
+        android:id="@+id/searchBinFragment"
+        android:name="com.example.android.bintest.search_bin.SearchBinFragment"
+        android:label="SearchBinFragment" >
+        <action
+            android:id="@+id/action_searchBinFragment_to_historyBinFragment"
+            app:destination="@id/historyBinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyBinFragment"
+        android:name="com.example.android.bintest.historybin.HistoryBinFragment"
+        android:label="HistoryBinFragment" >
+        <action
+            android:id="@+id/action_historyBinFragment_to_searchBinFragment"
+            app:destination="@id/searchBinFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@+id/searchBinFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
